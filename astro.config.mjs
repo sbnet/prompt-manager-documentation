@@ -21,8 +21,11 @@ export default defineConfig({
 			sidebar: [
 				{
 					label: 'Guide Utilisateur',
-					translations: { en: 'User Guide' },
 					autogenerate: { directory: 'fr/user' },
+				},
+				{
+					label: 'User Guide',
+					autogenerate: { directory: 'en/user' },
 				},
 			],
 		}),
