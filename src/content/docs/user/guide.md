@@ -1,4 +1,6 @@
-# Guide Utilisateur Prompt Manager
+---
+title: Guide Utilisateur Prompt Manager
+---
 
 Bienvenue sur la documentation utilisateur de **Prompt Manager**, votre plateforme complète pour la gestion, le versioning et l'exécution de prompts LLM.
 
