@@ -3,7 +3,7 @@ title: Prompt Manager
 description: La solution complète pour gérer vos prompts LLM.
 template: splash
 hero:
-  tagline: Industrialisez vos interactions avec les LLM. Versioning, tests et déploiement simplifiés.
+  tagline: Industrialisez vos interactions avec les LLM. Versioning, tests et déploiement simplifiés pour les équipes exigeantes.
   image:
     file: ../../assets/houston.webp
   actions:
@@ -18,19 +18,44 @@ hero:
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Fonctionnalités Clés
+<div class="hero-bg"></div>
+
+## Pourquoi Prompt Manager ?
 
 <CardGrid stagger>
-	<Card title="Versioning" icon="random">
-		Gérez le cycle de vie de vos prompts : Draft, Published, Archived. Ne perdez jamais une itération.
+	<Card title="Versioning Robuste" icon="random">
+		Ne perdez plus jamais une itération. Gérez le cycle de vie complet de vos prompts : **Draft**, **Published**, **Archived**.
 	</Card>
-	<Card title="Playground Intégré" icon="rocket">
-		Testez vos prompts directement avec différents modèles (OpenAI, Anthropic, Mistral...) et visualisez les résultats en streaming.
+	<Card title="Playground de Test" icon="rocket">
+		Un IDE complet pour tester vos prompts avec variables dynamiques et streaming, compatible avec **OpenAI**, **Anthropic**, **Mistral**, et plus.
 	</Card>
-	<Card title="API-First" icon="setting">
-		Intégrez vos prompts dans vos applications en quelques lignes de code via notre API performante.
+	<Card title="API Haute Performance" icon="setting">
+		Intégrez vos prompts dans vos applications en quelques millisecondes via notre API unifiée.
 	</Card>
-	<Card title="BYOK" icon="puzzle">
-		"Bring Your Own Key" : Connectez votre propre compte OpenRouter pour une facturation transparente et sans limites.
+	<Card title="Sécurité & BYOK" icon="puzzle">
+		Gardez le contrôle sur vos données et vos coûts avec le mode **Bring Your Own Key** (BYOK) pour une transparence totale.
 	</Card>
 </CardGrid>
+
+<div class="footer-section">
+  <div class="footer-content">
+    <div class="footer-col">
+      <h3>Prompt Manager</h3>
+      <p>L'outil essentiel pour les équipes produit et ingénierie qui construisent avec des LLM.</p>
+    </div>
+    <div class="footer-col">
+      <h3>Ressources</h3>
+      <ul>
+        <li><a href="/user/">Guide de Démarrage</a></li>
+        <li><a href="/user/api/">Référence API</a></li>
+        <li><a href="https://github.com/sbnet/prompt-manager">Code Source</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Légal</h3>
+      <p>&copy; 2026 Prompt Manager. Tous droits réservés.</p>
+    </div>
+  </div>
+</div>
+
+import '../../styles/home.css';

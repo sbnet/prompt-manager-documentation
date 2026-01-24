@@ -1,0 +1,61 @@
+---
+title: Prompt Manager
+description: The complete solution for managing your LLM prompts.
+template: splash
+hero:
+  tagline: Industrialize your LLM interactions. Simplified versioning, testing, and deployment for demanding teams.
+  image:
+    file: ../../../assets/houston.webp
+  actions:
+    - text: User Guide
+      link: /en/user/
+      icon: right-arrow
+      variant: primary
+    - text: API Documentation
+      link: /en/user/api/
+      icon: external
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<div class="hero-bg"></div>
+
+## Why Prompt Manager?
+
+<CardGrid stagger>
+	<Card title="Robust Versioning" icon="random">
+		Never lose an iteration again. Manage the full lifecycle of your prompts: **Draft**, **Published**, **Archived**.
+	</Card>
+	<Card title="Testing Playground" icon="rocket">
+		A complete IDE to test your prompts with dynamic variables and streaming, compatible with **OpenAI**, **Anthropic**, **Mistral**, and more.
+	</Card>
+	<Card title="High-Performance API" icon="setting">
+		Integrate your prompts into your applications in milliseconds via our unified API.
+	</Card>
+	<Card title="Security & BYOK" icon="puzzle">
+		Keep control over your data and costs with **Bring Your Own Key** (BYOK) mode for total transparency.
+	</Card>
+</CardGrid>
+
+<div class="footer-section">
+  <div class="footer-content">
+    <div class="footer-col">
+      <h3>Prompt Manager</h3>
+      <p>The essential tool for product and engineering teams building with LLMs.</p>
+    </div>
+    <div class="footer-col">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="/en/user/">Getting Started</a></li>
+        <li><a href="/en/user/api/">API Reference</a></li>
+        <li><a href="https://github.com/sbnet/prompt-manager">Source Code</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Legal</h3>
+      <p>&copy; 2026 Prompt Manager. All rights reserved.</p>
+    </div>
+  </div>
+</div>
+
+import '../../../styles/home.css';

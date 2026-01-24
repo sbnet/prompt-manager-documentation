@@ -1,0 +1,34 @@
+
+  .footer-section {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--sl-color-hairline);
+    background-color: var(--sl-color-black);
+  }
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: var(--sl-content-width);
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  .footer-col h3 {
+    font-size: 1rem;
+    color: var(--sl-color-white);
+    margin-bottom: 0.5rem;
+  }
+  .footer-col ul {
+    list-style: none;
+    padding: 0;
+  }
+  .footer-col li {
+    margin-bottom: 0.25rem;
+  }
+  .footer-col a {
+    text-decoration: none;
+    color: var(--sl-color-gray-3);
+  }
+  .footer-col a:hover {
+    color: var(--sl-color-accent);
+  }
