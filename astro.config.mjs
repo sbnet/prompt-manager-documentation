@@ -18,7 +18,6 @@ export default defineConfig({
 					lang: 'en',
 				},
 			},
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/sbnet/prompt-manager-documentation' }],
 			sidebar: [
 				{
 					label: 'User Guide',
