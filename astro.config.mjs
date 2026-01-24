@@ -13,10 +13,6 @@ export default defineConfig({
 					label: 'User Guide',
 					autogenerate: { directory: 'user' },
 				},
-				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
-				},
 			],
 		}),
 	],

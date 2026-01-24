@@ -1,40 +1,36 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
-template: splash # Remove or comment out this line to display the site sidebar on this page.
+title: Prompt Manager
+description: La solution complète pour gérer vos prompts LLM.
+template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: Industrialisez vos interactions avec les LLM. Versioning, tests et déploiement simplifiés.
   image:
     file: ../../assets/houston.webp
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: Guide Utilisateur
+      link: /user/
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
+      variant: primary
+    - text: Documentation API
+      link: /user/api/
       icon: external
-      variant: minimal
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Next steps
+## Fonctionnalités Clés
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
+	<Card title="Versioning" icon="random">
+		Gérez le cycle de vie de vos prompts : Draft, Published, Archived. Ne perdez jamais une itération.
 	</Card>
-	<Card title="Change page layout" icon="document">
-		Delete `template: splash` in `src/content/docs/index.mdx` to display a
-		sidebar on this page.
+	<Card title="Playground Intégré" icon="rocket">
+		Testez vos prompts directement avec différents modèles (OpenAI, Anthropic, Mistral...) et visualisez les résultats en streaming.
 	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
+	<Card title="API-First" icon="setting">
+		Intégrez vos prompts dans vos applications en quelques lignes de code via notre API performante.
 	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
+	<Card title="BYOK" icon="puzzle">
+		"Bring Your Own Key" : Connectez votre propre compte OpenRouter pour une facturation transparente et sans limites.
 	</Card>
 </CardGrid>
