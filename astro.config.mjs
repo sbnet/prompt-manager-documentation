@@ -11,9 +11,7 @@ export default defineConfig({
 			sidebar: [
 				{
 					label: 'User Guide',
-					items: [
-						{ label: 'Introduction', slug: 'user/guide' },
-					],
+					autogenerate: { directory: 'user' },
 				},
 				{
 					label: 'Reference',
