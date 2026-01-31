@@ -1,0 +1,73 @@
+name: Deploy Documentation
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build documentation
+        run: npm run build
+
+      - name: Setup SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.VPS_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H ${{ vars.VPS_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Create docs directory on server
+        run: |
+          ssh -i ~/.ssh/deploy_key ${{ vars.VPS_USERNAME }}@${{ vars.VPS_HOST }} \
+            "mkdir -p /srv/prompt-manager/doc && chmod 755 /srv/prompt-manager/doc"
+
+      - name: Deploy documentation to server
+        run: |
+          scp -i ~/.ssh/deploy_key -r dist/* \
+            ${{ vars.VPS_USERNAME }}@${{ vars.VPS_HOST }}:/srv/prompt-manager/doc/
+
+          echo "✅ Documentation files uploaded successfully"
+
+      - name: Set correct permissions
+        run: |
+          ssh -i ~/.ssh/deploy_key ${{ vars.VPS_USERNAME }}@${{ vars.VPS_HOST }} << 'ENDSSH'
+
+          # Set permissions for documentation
+          cd /srv/prompt-manager/doc
+          find . -type f -exec chmod 644 {} \;
+          find . -type d -exec chmod 755 {} \;
+
+          echo "✅ Permissions set correctly"
+
+          ENDSSH
+
+      - name: Cleanup SSH key
+        if: always()
+        run: rm -f ~/.ssh/deploy_key
+
+      - name: Deployment summary
+        run: |
+          echo "### Documentation Deployment Summary 📚" >> $GITHUB_STEP_SUMMARY
+          echo "**URL:** https://docs.bytheprompt.com" >> $GITHUB_STEP_SUMMARY
+          echo "**Server:** ${{ vars.VPS_HOST }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Path:** /srv/prompt-manager/doc" >> $GITHUB_STEP_SUMMARY
+          echo "**User:** ${{ vars.VPS_USERNAME }}" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Deployed successfully" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "The documentation is now live and accessible at:" >> $GITHUB_STEP_SUMMARY
+          echo "🔗 **https://docs.bytheprompt.com**" >> $GITHUB_STEP_SUMMARY

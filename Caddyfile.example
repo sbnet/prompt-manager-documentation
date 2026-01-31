@@ -1,0 +1,78 @@
+# Configuration Caddy pour la Documentation
+# Ajouter ce bloc à votre /etc/caddy/Caddyfile
+
+# Documentation Site
+docs.bytheprompt.com {
+    # Servir les fichiers statiques depuis ce répertoire
+    root * /srv/prompt-manager/doc
+    file_server
+
+    # Activer la compression gzip pour de meilleures performances
+    encode gzip
+
+    # Cache agressif pour les assets statiques (CSS, JS, images, fonts)
+    @static {
+        path *.css *.js *.jpg *.jpeg *.png *.gif *.svg *.ico *.woff *.woff2 *.ttf *.eot
+    }
+    header @static {
+        Cache-Control "public, max-age=31536000, immutable"
+    }
+
+    # Cache plus court pour les fichiers HTML
+    @html {
+        path *.html
+    }
+    header @html {
+        Cache-Control "public, max-age=3600, must-revalidate"
+    }
+
+    # Headers de sécurité
+    header {
+        # Force HTTPS (HSTS)
+        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+        # Empêche le sniffing MIME
+        X-Content-Type-Options "nosniff"
+
+        # Protection contre le clickjacking
+        X-Frame-Options "DENY"
+
+        # Protection XSS
+        X-XSS-Protection "1; mode=block"
+
+        # Politique de referrer
+        Referrer-Policy "strict-origin-when-cross-origin"
+
+        # Content Security Policy (ajuster selon vos besoins)
+        Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:;"
+    }
+
+    # Fallback pour SPA (Astro/Starlight)
+    # Essaie de servir le fichier demandé, puis le répertoire, puis index.html
+    try_files {path} {path}/ /index.html
+
+    # Page 404 personnalisée (si vous en avez une)
+    handle_errors {
+        @404 {
+            expression {http.error.status_code} == 404
+        }
+        rewrite @404 /404.html
+        file_server
+    }
+
+    # Logging avec rotation automatique
+    log {
+        output file /var/log/caddy/docs.bytheprompt.com.log {
+            roll_size 100mb    # Rotation tous les 100MB
+            roll_keep 5        # Garder 5 fichiers
+            roll_keep_for 720h # Garder pendant 30 jours
+        }
+        format json
+        level INFO
+    }
+}
+
+# Redirection HTTP → HTTPS (Caddy le fait automatiquement, mais explicite c'est mieux)
+http://docs.bytheprompt.com {
+    redir https://docs.bytheprompt.com{uri} permanent
+}
