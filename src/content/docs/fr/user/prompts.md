@@ -36,9 +36,18 @@ Le système garantit l'immutabilité : une fois une version créée, elle ne cha
 
 ### Statuts des Versions
 
-1.  **DRAFT (Brouillon)** : La version sur laquelle vous travaillez. Elle n'est pas accessible via l'API de production par défaut.
-2.  **PUBLISHED (Publié)** : Une version stable, prête à être utilisée en production.
+1.  **DRAFT (Brouillon)** : La version sur laquelle vous travaillez. Elle n'est pas accessible via l'API de production par défaut. Seules les versions DRAFT peuvent être modifiées ou supprimées.
+2.  **PRODUCTION** : Une version stable, prête à être utilisée en production. L'API utilise automatiquement la version PRODUCTION de vos prompts.
 3.  **ARCHIVED (Archivé)** : Une ancienne version qui n'est plus utilisée mais conservée pour l'historique.
 
-> [!TIP]
-> Utilisez toujours la version publiée pour vos applications en production pour garantir la stabilité.
+### Promouvoir une Version
+
+Pour passer une version DRAFT en PRODUCTION :
+1. Ouvrez le prompt dans l'IDE
+2. Sélectionnez la version DRAFT
+3. Cliquez sur **Promote to Production**
+4. La version précédente en PRODUCTION est automatiquement archivée
+
+:::tip[Bonne Pratique]
+Utilisez toujours la version PRODUCTION pour vos applications en production pour garantir la stabilité. Testez vos modifications en DRAFT avant de les promouvoir.
+:::

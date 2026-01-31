@@ -16,14 +16,28 @@ Registration is simple and fast. Once registered, you will automatically access 
 
 The interface is divided into several main sections:
 
-### Dashboard
-Your main dashboard displaying your recent consumption and quota status.
+### <Icon name="seti:dashboard" /> Dashboard
+Your main dashboard displaying:
+- Your usage statistics
+- Cost and token consumption tracking
+- 7-day activity chart
+- Your recent executions
 
-### Prompts
+### <Icon name="seti:text" /> Prompts
 The central space where you create, edit, and manage your prompts. This is where you will spend most of your time.
 
-### Settings
-Manage your preferences, subscription, and BYOK configuration (for PRO users).
+Available features:
+- Prompt creation and editing
+- Version management (DRAFT/PRODUCTION/ARCHIVED)
+- Category organization
+- Testing and execution in Playground
+- Golden Samples management
+
+### <Icon name="seti:settings" /> Settings
+Manage your preferences and configuration:
+- **Profile**: Name, password, account deletion
+- **API Keys**: API key generation (PRO only)
+- **BYOK**: Personal OpenRouter key configuration (PRO only)
 
 ## Your First Prompt
 

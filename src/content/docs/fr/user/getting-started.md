@@ -16,14 +16,28 @@ L'inscription est simple et rapide. Une fois inscrit, vous accéderez automatiqu
 
 L'interface est découpée en plusieurs sections principales :
 
-### Dashboard
-Votre tableau de bord principal affichant votre consommation récente et l'état de vos quotas.
+### <Icon name="seti:dashboard" /> Dashboard
+Votre tableau de bord principal affichant :
+- Vos statistiques d'utilisation
+- Le suivi des coûts et tokens consommés
+- Un graphique d'activité sur 7 jours
+- Vos exécutions récentes
 
-### Prompts
+### <Icon name="seti:text" /> Prompts
 L'espace central où vous créez, éditez et gérez vos prompts. C'est ici que vous passerez le plus clair de votre temps.
 
-### Settings (Paramètres)
-Gérez vos préférences, votre abonnement et votre configuration BYOK (pour les utilisateurs PRO).
+Fonctionnalités disponibles :
+- Création et édition de prompts
+- Gestion des versions (DRAFT/PRODUCTION/ARCHIVED)
+- Organisation par catégories
+- Test et exécution dans le Playground
+- Gestion des Golden Samples
+
+### <Icon name="seti:settings" /> Settings (Paramètres)
+Gérez vos préférences et configuration :
+- **Profil** : Nom, mot de passe, suppression de compte
+- **API Keys** : Génération de clés API (PRO uniquement)
+- **BYOK** : Configuration de votre clé OpenRouter personnelle (PRO uniquement)
 
 ## Votre Premier Prompt
 

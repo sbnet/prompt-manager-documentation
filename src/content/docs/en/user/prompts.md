@@ -36,9 +36,18 @@ The system guarantees immutability: once a version is created, it never changes.
 
 ### Version Statuses
 
-1.  **DRAFT**: The version you are working on. It is not accessible via the production API by default.
-2.  **PUBLISHED**: A stable version, ready to be used in production.
+1.  **DRAFT**: The version you are working on. It is not accessible via the production API by default. Only DRAFT versions can be modified or deleted.
+2.  **PRODUCTION**: A stable version, ready to be used in production. The API automatically uses the PRODUCTION version of your prompts.
 3.  **ARCHIVED**: An old version that is no longer used but kept for history.
 
-> [!TIP]
-> Always use the published version for your production applications to ensure stability.
+### Promoting a Version
+
+To promote a DRAFT version to PRODUCTION:
+1. Open the prompt in the IDE
+2. Select the DRAFT version
+3. Click **Promote to Production**
+4. The previous PRODUCTION version is automatically archived
+
+:::tip[Best Practice]
+Always use the PRODUCTION version for your production applications to ensure stability. Test your changes in DRAFT before promoting them.
+:::
