@@ -7,9 +7,9 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'Prompt Manager Documentation',
-			defaultLocale: 'fr',
+			defaultLocale: 'root',
 			locales: {
-				fr: {
+				root: {
 					label: 'Français',
 					lang: 'fr',
 				},
@@ -21,11 +21,29 @@ export default defineConfig({
 			sidebar: [
 				{
 					label: 'Guide Utilisateur',
-					autogenerate: { directory: 'fr/user' },
-				},
-				{
-					label: 'User Guide',
-					autogenerate: { directory: 'en/user' },
+					translations: { en: 'User Guide' },
+					items: [
+						{
+							label: 'Général',
+							translations: { en: 'General' },
+							autogenerate: { directory: 'user/general' }
+						},
+						{
+							label: 'Concepts',
+							translations: { en: 'Core' },
+							autogenerate: { directory: 'user/core' }
+						},
+						{
+							label: 'Gestion',
+							translations: { en: 'Management' },
+							autogenerate: { directory: 'user/management' }
+						},
+						{
+							label: 'Développeurs',
+							translations: { en: 'Developers' },
+							autogenerate: { directory: 'user/developers' }
+						},
+					],
 				},
 			],
 		}),

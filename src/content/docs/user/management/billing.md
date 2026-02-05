@@ -16,7 +16,7 @@ Idéal pour découvrir la plateforme et pour les projets personnels.
 - Versioning complet (DRAFT/PRODUCTION/ARCHIVED)
 - Organisation par catégories
 - Golden Samples pour tests de régression
-- Analytics et suivi des coûts
+- [Analytics et suivi des coûts](/user/management/analytics/)
 - Accès aux modèles gratuits via OpenRouter
 
 **Limites :**

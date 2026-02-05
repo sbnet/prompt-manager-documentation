@@ -40,6 +40,15 @@ The system guarantees immutability: once a version is created, it never changes.
 2.  **PRODUCTION**: A stable version, ready to be used in production. The API automatically uses the PRODUCTION version of your prompts.
 3.  **ARCHIVED**: An old version that is no longer used but kept for history.
 
+```mermaid
+graph LR
+    Draft[Draft] -->|Promote| Prod[Production]
+    Prod -->|New Promotion| Arch[Archived]
+    style Draft fill:#f9f,stroke:#333
+    style Prod fill:#bbf,stroke:#333
+    style Arch fill:#ddd,stroke:#333
+```
+
 ### Promoting a Version
 
 To promote a DRAFT version to PRODUCTION:
