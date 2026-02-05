@@ -34,7 +34,7 @@ jobs:
       - name: Create docs directory on server
         run: |
           ssh -i ~/.ssh/deploy_key ${{ vars.VPS_USERNAME }}@${{ vars.VPS_HOST }} \
-            "mkdir -p /srv/prompt-manager/doc && chmod 755 /srv/prompt-manager/doc"
+            "rm -rf /srv/prompt-manager/doc/* && mkdir -p /srv/prompt-manager/doc && chmod 755 /srv/prompt-manager/doc"
 
       - name: Deploy documentation to server
         run: |
