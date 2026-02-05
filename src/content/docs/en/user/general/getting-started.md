@@ -31,7 +31,6 @@ Available features:
 - Version management (DRAFT/PRODUCTION/ARCHIVED)
 - Category organization
 - Testing and execution in Playground
-- Golden Samples management
 
 ### <Icon name="seti:settings" /> Settings
 Manage your preferences and configuration:

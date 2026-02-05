@@ -60,7 +60,6 @@ Toutes les exécutions sont enregistrées dans le système. Vous pouvez consulte
 - Voir les résultats précédents
 - Comparer les sorties de différents modèles
 - Analyser le coût (tokens) de chaque exécution
-- Créer des Golden Samples à partir d'exécutions réussies
 
 L'historique est accessible depuis :
 - Le tableau de bord (activité récente)

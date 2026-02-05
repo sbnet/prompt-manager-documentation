@@ -62,7 +62,6 @@ All executions are recorded in the system. You can consult the history to:
 - See previous results
 - Compare outputs from different models
 - Analyze the cost (tokens) of each execution
-- Create Golden Samples from successful executions
 
 The history is accessible from:
 - The dashboard (recent activity)

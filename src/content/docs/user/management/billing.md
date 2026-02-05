@@ -15,7 +15,6 @@ Idéal pour découvrir la plateforme et pour les projets personnels.
 - Gestion illimitée de prompts (création, édition)
 - Versioning complet (DRAFT/PRODUCTION/ARCHIVED)
 - Organisation par catégories
-- Golden Samples pour tests de régression
 - [Analytics et suivi des coûts](/user/management/analytics/)
 - Accès aux modèles gratuits via OpenRouter
 
@@ -26,7 +25,7 @@ Idéal pour découvrir la plateforme et pour les projets personnels.
 - Pas de fonctionnalité BYOK
 - Accès limité aux modèles gratuits uniquement
 
-## Offre PRO (7€ / mois)
+## Offre PRO ($7 / mois)
 
 Pour les professionnels et les équipes qui ont besoin de puissance et de flexibilité.
 

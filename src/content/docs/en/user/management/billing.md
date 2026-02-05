@@ -17,7 +17,6 @@ Ideal for discovering the platform and for personal projects.
 - Unlimited prompt management (creation, editing)
 - Full versioning (DRAFT/PRODUCTION/ARCHIVED)
 - Category organization
-- Golden Samples for regression testing
 - [Analytics and cost tracking](/en/user/management/analytics/)
 - Access to free models via OpenRouter
 

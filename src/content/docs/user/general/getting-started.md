@@ -31,7 +31,6 @@ Fonctionnalités disponibles :
 - Gestion des versions (DRAFT/PRODUCTION/ARCHIVED)
 - Organisation par catégories
 - Test et exécution dans le Playground
-- Gestion des Golden Samples
 
 ### <Icon name="seti:settings" /> Settings (Paramètres)
 Gérez vos préférences et configuration :
